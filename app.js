@@ -1,3 +1,4 @@
+// Electric BILL Calculator
 new Vue({
 	el: '#app1',
 	data: {
