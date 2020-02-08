@@ -1,0 +1,78 @@
+.card{
+	box-shadow: 0px 3px 5px 3px #f2f2f2;
+	margin-top: 5%;
+}
+body{
+	text-align: center;
+}
+#app1, #app2, #app3{
+	text-align: right;
+	width: 30rem; 
+	padding: 3%; 
+	margin: auto;
+}
+table{
+	width: 90%;
+	font-size: 14px;
+	text-align: center;
+	margin: auto;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+}
+table, th, td{
+	border: solid 1px #e6e6e6;
+	border-collapse: collapse;
+	padding: 4px;
+}
+table thead{
+	
+}
+table tfoot{
+	font-weight: bold;
+}
+h6
+{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.container {
+				padding: 20px 0
+			}
+			.main_heading {
+				margin: 10px 0 30px;
+			}
+			.callout {
+				margin-bottom: 40px;
+			}
+			select {
+				text-transform:capitalize;
+			}
+			.loader {
+				text-align: center;
+				padding: 40px;
+			}
+			.uppercase {
+				text-transform: uppercase;
+			}
+			li
+			{
+				font-size: 13px;
+			}
+			li
+			{
+				list-style: none;
+			}
+			.col-lg-12, .col-lg-2
+			{
+				text-align: left;
+				margin-top: 1%; 
+			}
+.accordion .btn .btn-light :after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .btn.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
