@@ -15,8 +15,8 @@ Vue.component('news-list', {
   template: `
     <section>
       <div class="row" v-for="posts in processedPosts">
-        <div class="col-lg-3" v-for="post in posts" style = "box-shadow: 0px 0px 0px 0px;">
-          <div class="card" style = 'text-align:left; '>
+        <div class="col-lg-3" v-for="post in posts" style = "">
+          <div class="card" style = "text-align:left; border-style: none; box-shadow: ">
             <div class="card-img-top">
               <a :href="post.url" target="_blank"><img :src="post.image_url" style="width:100%;height:auto;"></a>
             </div>
