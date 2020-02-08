@@ -9,8 +9,8 @@ new Vue({
 			image1: 'assets/images/vue_logo.png',
 			image2: 'assets/images/bootstrap4.jpg'
 		  },
-	computed: {
-		result() {
+		computed: {
+			result() {
 			    	return (parseFloat(this.watt) * parseFloat(this.hour) * parseFloat(this.rate) * parseFloat(this.day)) / 1000;
 			    }
 			  }
@@ -87,31 +87,19 @@ new Vue({
 
 })
 
-///Leetcode Problems API
+///Weather API
 new Vue({
   el: '#app7',
   data: {
-    problems: NULL
+    coord: 0,
+    main: []
   },
   created () {
-			fetch('https://leetcode.com/api/problems/algorithms/')
+			fetch('http://api.openweathermap.org/data/2.5/weather?q=dhaka&appid=483167eba07508bd7e5084cb6e6af43a')
 			.then(response => response.json())
 			.then(json => {
-			 this.problems = json.user_name	
+			 this.coord = json.coord,
+			 this.main = json.main;	
 			})
 		}
 })
-/*
-new Vue({
-		el: '#app7',
-		data: {
-			problems: 'Leetcode'
-		}/*,
-		created () {
-			fetch('https://leetcode.com/api/problems/algorithms/')
-			.then(response => response.json())
-			.then(json => {
-			 this.problems = json.stat_status_pairs.stat
-			})
-		}
-})*/
