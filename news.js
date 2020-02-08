@@ -1,3 +1,5 @@
+// for news api
+
 "use strict";
 
 const NYTBaseUrl = "https://api.nytimes.com/svc/topstories/v2/";
