@@ -29,6 +29,7 @@
 		    <a class="nav-item nav-link"  style="color: black" id="nav-contest-tab" data-toggle="tab" href="#nav-country" role="tab" aria-controls="nav-country" aria-selected="false">Country API</a>
 		    <a class="nav-item nav-link"  style="color: black" id="nav-news-tab" data-toggle="tab" href="#nav-news" role="tab" aria-controls="nav-news" aria-selected="false">News API</a>
 		    <a class="nav-item nav-link"  style="color: black" id="nav-test-tab" data-toggle="tab" href="#nav-test" role="tab" aria-controls="nav-test" aria-selected="false">Test Tab</a>
+		    <a class="nav-item nav-link"  style="color: black" id="nav-test2-tab" data-toggle="tab" href="#nav-test2" role="tab" aria-controls="nav-test2" aria-selected="false">Test Tab 2</a>
 		  </div>
 		</nav>
 
@@ -375,7 +376,7 @@
 			  		<div class = "col-lg-5" style = "text-align: left; padding-left: 6%">
 			  			<h5>Weather in Dhaka</h5>
 				  		<h3> {{main.temp - 273}} °C</h3>
-				  		<li style = "font-size: 16px;">Min: {{main.temp_min - 273}} °C</li>
+				  		<li style = "font-size: 16px;">Min: {{main.feels_like - 273}} °C</li>
 				  		<li style = "font-size: 16px;">Max: {{main.temp_max - 273}} °C</li>
 				  		<li style = "font-size: 16px;">
 				  			<img src = "assets/images/humidity.png" style = "width: 30px; height: 30px"/>
@@ -383,6 +384,20 @@
 				  		</li>
 			  		</div>
 			  	</div>
+		  	</div>
+		  </div>
+
+		 <!--Test Tab 2-->
+
+		  <div class="tab-pane fade" id="nav-test2" role="tabpanel" aria-labelledby="nav-test2-tab">
+		  	<div>
+		  		<div class = "row" style ="margin:0;padding: 2%">
+			  		<!--Corona Virus Update-->
+			  		<div class="row" id = "app8">
+			  			<h2>Corona Virus Update</h2>
+			  		</div>
+			  	</div>
+
 		  	</div>
 		  </div>
 		</div>
