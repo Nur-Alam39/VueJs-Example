@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>COVID 19 Update</title>
+		<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/2019-nCoV-CDC-23312_without_background.png/220px-2019-nCoV-CDC-23312_without_background.png" type="image/icon type">
+		<!--Bootstrap 4 CDN-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<!--Axious for API-->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<!--Font awasome-->
+		<script src="https://kit.fontawesome.com/fe6cc37c91.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+		<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class = "container-fluid pt-3">
+				<h2 style = 'text-align: center'>কোভিড-১৯ (করোনা ভাইরাস) এর পরিস্থিতি</h2>
+				<hr>
+				<div class="row m-0 p-2 text-center justify-content-center">
+					<small>
+						<a href='https://github.com/NovelCOVID/API'>API Source </a> <i style="color:#b3b3b3">&#8226; </i>
+						<a href='https://www.worldometers.info/coronavirus/'>Information Source </a> <i style="color:#b3b3b3">&#8226; </i>
+						<a href='https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd'>WHO Information </a><i style="color:#b3b3b3">&#8226; </i>
+						<label>Developed with vuejs and axios </label><i style="color:#b3b3b3">&#8226; </i>
+						<label>Interface designed by <a href='https://github.com/Nur-Alam39'>Nur-E-Alam Jony</a></label>
+					</small>
+				</div>
+				<div class="row m-0">
+					<div class="col-lg-6">
+						<div id='app10' class='container-fluid'>
+				  			<div class='row m-0 mt-3 text-center justify-content-center'>
+							   <h3 class="text-center">সমগ্র বিশ্ব</h3>
+							</div>
+							<hr>
+							 <div class="row mx-auto text-center">
+							    <div class="col-lg-4 p-0">
+							    	<p class="card-text"><h3>{{covid_19_total.cases}}</h3>মোট আক্রান্ত</p>
+							    </div>
+							    <div class="col-lg-4 pl-1">
+							    	<p class="card-text"><h3  style="color: red">{{covid_19_total.deaths}}</h3>মোট মৃত্যু</p>
+							    </div>
+							    <div class="col-lg-4 pl-1">
+							    	<p class="card-text"><h3  style="color: green">{{covid_19_total.recovered}}</h3>সুস্থ হয়েছেন</p>
+							    </div>
+							</div>
+							<div class="mx-auto text-center">
+								<p class="card-text"><h5>{{ covid_19_total.updated | moment("dddd, MMMM Do YYYY") }}</h5>সর্বশেষ হালনাগাদ</p>
+
+								<span>{{ someDate | moment("dddd, MMMM Do YYYY, h:mm:ss a") }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class = "container-fluid bg-light mt-3 p-0 justify-content-center" id = "app11">
+							<div class="container-fluid shadow-sm" style="background-color:#ffffff; border: none;">
+								<div class='row m-0 text-center justify-content-center'>
+								   <h3 class="text-center">বাংলাদেশ</h3>
+								</div>
+								<hr>
+								<div class="row m-0 text-center">
+								    <div class="col-lg-4 p-0">
+								    	<p class="card-text"><h5>{{covid_19_bangladesh.cases}}</h5>মোট আক্রান্ত</p>
+										<p class="card-text" ><h5 style="color: red">{{covid_19_bangladesh.deaths}}</h5>মোট মৃত্যু</p>
+								    </div>
+								    <div class="col-lg-4 p-0">
+								    	<p class="card-text"><h5  style="color: green">{{covid_19_bangladesh.recovered}}</h5>সুস্থ হয়েছেন</p>
+								    	<p class="card-text"><h5  style="color: orange">{{covid_19_bangladesh.critical}}</h5>সংকটপূর্ণ</p>
+								    </div>
+								    <div class="col-lg-4 p-0">
+								    	<p class="card-text"><h5>{{covid_19_bangladesh.todayCases}}</h5>আজকে আক্রান্ত</p>
+										<p class="card-text" ><h5 style="color: red">{{covid_19_bangladesh.todayDeaths}}</h5>আজকে মৃত্যু</p>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		  	</div>
+			<div class = "container-fluid bg-light mt-2 p-0 justify-content-center" id = "app9">
+				<div class="row m-0 p-4">
+			        <div class="col-lg-4 mt-3 shadow-sm" v-for="country in covid_19_all_countries">
+					  <div class="card shadow-sm" style="border: none; border-radius: 10px;">
+					    <!-- <img v-bind:src="country.flag" alt="Flag" height="auto" width="100%" class="card-img-top"> -->
+					    <div class="card-body ">
+					    	 <div class='row m-0 text-center justify-content-center'>
+					    	 	<h4 class="text-center">{{country.country}}</h4>
+					    	 </div>
+					    	 <div class="row m-0 text-center">
+					    	 	<div class="col-lg-4 p-0">
+					    	 		<p class="card-text"><h5>{{country.cases}}</h5>
+					    	 			<small>মোট আক্রান্ত</small>
+					    	 		</p>
+								    <p class="card-text" ><h5 style="color: red">{{country.deaths}}</h5>
+								     	<small>মোট মৃত্যু</small>
+								     </p>
+					    	 	</div>
+					    	 	<div class="col-lg-4 p-0">
+					    	 		<p class="card-text"><h5  style="color: green">{{country.recovered}}</h5>
+					    	 			<small>সুস্থ হয়েছেন</small>
+					    	 		</p>
+					    	 		<p class="card-text"><h5  style="color: orange">{{country.critical}}</h5>
+					    	 			<small>সংকটপূর্ণ</small>
+					    	 		</p>
+					    	 	</div>
+					    	 	<div class="col-lg-4 p-0">
+					    	 		<p class="card-text"><h5>{{country.todayCases}}</h5>
+					    	 			<small>আজকে আক্রান্ত</small>
+					    	 		</p>
+								    <p class="card-text" ><h5 style="color: red">{{country.todayDeaths}}</h5>
+								    	<small>আজকে মৃত্যু</small>
+								    </p>
+					    	 	</div>
+					    	 </div>
+					    </div>
+					  </div>
+					 </div>
+			      </div>
+			    </div> 
+	</body>
+	
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://unpkg.com/vue"></script>
+		<!--Vuejs Package-->
+		<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="config.js"></script>
+		<script src="app.js"></script>
+		<!--Vuejs Package-->
+		<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+		<!--Custom CSS and JS-->
+		<link rel="stylesheet" href="style.css">
+		<script src="app.js" type="text/javascript"></script>
+		<script src="news.js" type="text/javascript"></script>
+		<script src="config.js" type="text/javascript"></script>
+		<!--Custom CSS and JS-->
+</html>

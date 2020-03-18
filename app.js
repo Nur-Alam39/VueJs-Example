@@ -85,7 +85,7 @@ new Vue({
                 ));
     }
 
-})
+});
 
 ///Weather API
 new Vue({
@@ -102,4 +102,88 @@ new Vue({
 			 this.main = json.main;	
 			})
 		}
-})
+});
+
+///All contest list API
+
+new Vue({
+    el: '#app8', //Attach to element id app
+    data: {
+        contests: [] //Blank country array
+    },
+
+    mounted() { //When element is mounted, look up data
+        axios
+            .get('https://www.kontests.net/api/v1/all')
+            .then(response => 
+			{
+                this.contests = response.data
+			})
+            .catch(error =>(
+                console.log(error)
+                ));
+    }
+
+});
+
+new Vue({
+    el: '#app9', //Attach to element id app
+    data: {
+        covid_19_all_countries: [],
+        covid_19_total: [] //Blank country array
+    },
+
+    mounted() { //When element is mounted, look up data
+        axios
+            .get('https://corona.lmao.ninja/countries')
+            .then(response => 
+			{
+                this.covid_19_all_countries = response.data
+			})
+            .catch(error =>(
+                console.log(error)
+                ));
+    }
+
+});
+
+new Vue({
+    el: '#app10', //Attach to element id app
+    data: {
+        covid_19_total: [] //Blank country array
+    },
+
+    mounted() { //When element is mounted, look up data
+        axios
+            .get('https://corona.lmao.ninja/all')
+            .then(response => 
+			{
+                this.covid_19_total = response.data
+			})
+            .catch(error =>(
+                console.log(error)
+                ));
+    }
+
+});
+
+new Vue({
+    el: '#app11', //Attach to element id app
+    data: {
+        covid_19_bangladesh: [] //Blank country array
+    },
+
+    mounted() { //When element is mounted, look up data
+        axios
+            .get('https://corona.lmao.ninja/countries/bangladesh')
+            .then(response => 
+			{
+                this.covid_19_bangladesh = response.data
+			})
+            .catch(error =>(
+                console.log(error)
+                ));
+    }
+
+});
+
