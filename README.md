@@ -1,5 +1,5 @@
 # VueJs-Example
-Preview: https://bsmrstucsecf.000webhostapp.com/vue.html
+Preview: https://bsmrstucsecf.000webhostapp.com/vuejs%20example/vue.html
 
 Some mini projects using VueJs.
  1. Calculator (Electric Bill, BMI, VAT)
