@@ -1,5 +1,5 @@
 # VueJs-Example
-Preview: https://bsmrstucsecf.000webhostapp.com/vuejs%20example/vue.html
+Preview: https://bsmrstucsecf.000webhostapp.com/vuejs%20example/index.html
 
 Some api demonostration using VueJs:
 
