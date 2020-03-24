@@ -13,6 +13,8 @@ Some api demonostration using VueJs:
  ### Covid-19 API Test 
  Live: https://bit.ly/2x5fq07
  Date: 19 March 2020
- ![screencapture-bsmrstucsecf-000webhostapp-vuejs-example-covid19-html-2020-03-19-00_45_14](https://user-images.githubusercontent.com/23233774/76996327-861a8400-697b-11ea-995d-53d3c39c7e81.png)
+ 
+![screencapture-bsmrstucsecf-000webhostapp-vuejs-example-covid19-html-2020-03-19-00_45_14](https://user-images.githubusercontent.com/23233774/77460290-14cf4b00-6e2b-11ea-9a3e-77eda7fff7aa.png)
+
  
  
