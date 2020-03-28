@@ -3,7 +3,7 @@ Preview: https://bsmrstucsecf.000webhostapp.com/vuejs%20example/index.html
 
 Some api demonostration using VueJs:
 
- 1. COVID-19 Update API- https://bit.ly/2x5fq07
+ 1. COVID-19 Update API (API Source-https://github.com/novelcovid/api Live demo-https://bit.ly/2x5fq07)
  2. Calculator (Electric Bill, BMI, VAT)
  3. New York Times News API
  4. Codeforces Contest List API
