@@ -36,83 +36,69 @@
 					<label>Developed by <a href='https://github.com/Nur-Alam39/VueJs-Example' target="_blank" style="color: blue">Nur-E-Alam Jony</a></label>
 				</small>
 			</div>
-			<div class="row m-0">
-				<div class="col-md-6  p-4 mt-2">
-					<div class = "mt-3 m-0 p-2 justify-content-center" id = "app10" 
-							style="border:; border-radius: 10px">
-						<div class='row m-0 mt-3 text-center justify-content-center'>
-						   <h3 class="text-center">সমগ্র বিশ্ব</h3>
-						</div>
-						<hr>
-						<div class="row m-0 text-center">
-						    <div class="col-md-4 p-0">
-						    	<p class="card-text"><h3>{{covid_19_total.cases}}</h3>মোট আক্রান্ত</p>
-								<p class="card-text"><h3 style="color: #ffad33">{{covid_19_total.affectedCountries}}</h3>দেশের সংখ্যা</p>
-						    </div>
-						    <div class="col-md-4 p-0">
-						    	<p class="card-text"><h3 style="color: red">{{covid_19_total.deaths }}</h3>মোট মৃত্যু</p>
-						    	
-						    </div>
-						    <div class="col-md-4 p-0">
-						    	<p class="card-text"><h3 style="color: rgb(0, 180, 0)">{{covid_19_total.recovered}}</h3>সুস্থ হয়েছেন</p>
-								
-						    </div>
-						</div>
-						<hr>
-						<div class="container-fluid m-0 text-right">
-							<small><p class="card-text">হালনাগাদ হয়েছেঃ {{covid_19_total.updated}} </p></small> 
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6  p-4 mt-2">
-					<div class = "mt-3 m-0 p-2 justify-content-center" id = "app11" 
-							style="border:; border-radius: 10px">
-						<div class='row m-0 mt-3 text-center justify-content-center'>
-						   
-						   <div class="col-md-1">
-				    	 		<img v-bind:src='covid_19_bangladesh.countryInfo.flag' width="80px" height="50px" />
-				    	 	</div>
-				    	 	<div class="col-md-6">
-				    	 		<h3 class="text-center">বাংলাদেশ</h3>
-				    	 	</div>
-						</div>
-						<hr>
-						<div class="row m-0 text-center">
-						    <div class="col-md-4 p-0">
-						    	<p class="card-text"><h3>{{covid_19_bangladesh.cases}}</h3>মোট আক্রান্ত</p>
-								<p class="card-text" ><h3 style="color: red">{{covid_19_bangladesh.deaths}}</h3>মোট মৃত্যু</p>
-						    </div>
-						    <div class="col-md-4 p-0">
-						    	<p class="card-text"><h3 style="color: rgb(0, 180, 0)">{{covid_19_bangladesh.recovered}}</h3>সুস্থ হয়েছেন</p>
-						    	<p class="card-text"><h3  style="color: orange">{{covid_19_bangladesh.critical}}</h3>সংকটপূর্ণ</p>
-						    </div>
-						    <div class="col-md-4 p-0">
-						    	<p class="card-text"><h3>{{covid_19_bangladesh.todayCases}}</h3>আজকে আক্রান্ত</p>
-								<p class="card-text" ><h3 style="color: red">{{covid_19_bangladesh.todayDeaths}}</h3>আজকে মৃত্যু</p>
-						    </div>
-						</div>
-						<hr>
-						<div class="container-fluid m-0">
-							<small style="text-align: right">
-								<label>আরো তথ্যঃ </label> <a href='https://www.iedcr.gov.bd/' target="_blank" style="color: blue"> IEDCR</a> <i style="color:#b3b3b3">&#8226; </i>
-								<label> </label> <a href='http://119.40.84.187/surveillance/' target="_blank" style="color: blue"> কোভিড-১৯ পাবলিক ড্যাশবোর্ড</a> <i style="color:#b3b3b3">&#8226; </i>
-								<a href='http://corona.gov.bd/' target="_blank" style="color: blue"> করোনা ইনফো</a> <i style="color:#b3b3b3">&#8226; </i>
-								<label></label> <a href='https://corona.gov.bd/covid19Test' target="_blank" style="color: blue">কোভিড টেস্ট</a> 
-							</small> 
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
-		<div class = "container-fluid m-0 p-0 justify-content-center" id = "app9">
+		<div class = "container-fluid m-0 p-0 justify-content-center" id = "app12">
 			<div class="row m-0 p-4">
-		        <div class="col-md-4 mt-3" v-for="country in covid_19_all_countries">
+
+				<table class="table table-bordered">
+					<tr class="">
+						<th></th>
+						<th>Country</th>
+						<th>Total Cases</th>
+						<th>Today Cases</th>
+						<th>Deaths</th>
+						<th>Today Deaths</th>
+						<th> Recovered</th>
+						<th> Active</th>
+						<th> Critical</th>
+						<th> Tests</th>
+					</tr>
+					<tr v-for="country in covid_19_yesterday">
+						<td>
+							<img v-bind:src='country.countryInfo.flag' width="30px" />
+						</td>
+						<td>
+							<a style='color: black; text-decoration: none;' target="_blank" v-bind:href="'https://www.worldometers.info/coronavirus/country/'+ country.country +'/'">{{country.country}}</a>
+						</td>
+						<td>{{country.cases}}</td>
+						<td>{{country.todayCases}}</td>
+						<td>{{country.deaths}}</td>
+						<td>{{country.todayDeaths}}</td>
+						<td>{{country.recovered}}</td>
+						<td>{{country.active}}</td>
+						<td>{{country.critical}}</td>
+						<td>{{country.tests}}</td>
+					</tr>
+				</table>
+				<!-- <table class="table table-fixed">
+                        <thead>
+                            <tr>
+                                <th  >#</th>
+                                <th  >Country</th>
+                                <th  >Total Cases</th>
+                                <th  >Today Cases</th>
+                                <th  >Deaths</th>
+                                <th  >Today Deaths</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr v-for="country in covid_19_yesterday">
+                                <td ><img v-bind:src='country.countryInfo.flag' width="30px" /></td>
+                                <td ><a style='color: black; text-decoration: none;' target="_blank" v-bind:href="'https://www.worldometers.info/coronavirus/country/'+ country.country +'/'">{{country.country}}</a></td>
+                                <td >{{country.cases}}</td>
+                                <td >{{country.cases}}</td>
+                                <td >{{country.cases}}</td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+		       <!--  <div class="col-md-4 mt-3" v-for="country in covid_19_all_countries">
 		        <a style='color: black; text-decoration: none;' target="_blank" v-bind:href="'https://www.worldometers.info/coronavirus/country/'+ country.country +'/'">
 				  <div class="card" style="border: ; border-radius: 10px;">
 				    <div class="card-body ">
 				    	 <div class='row m-0 text-center justify-content-center'>
 				    	 	<div class="col-md-2">
-				    	 		<img v-bind:src='country.countryInfo.flag' width="45px" height="42px" style="border-radius: 50%"/>
+				    	 		<img v-bind:src='country.countryInfo.flag' width="40px" height="20px" />
 				    	 	</div>
 				    	 	<div class="col-md-6">
 				    	 		<h4 class="text-center">{{country.country}}</h4>
@@ -143,7 +129,7 @@
 				    </div>
 				  </div>
 				</a>
-				</div>
+				</div> -->
 		    </div>
 		</div>
 		<hr>
@@ -163,4 +149,32 @@
 	<!--Custom CSS and JS-->
 	<script src="app.js" type="text/javascript"></script>
 	<!--Custom CSS and JS-->
+	<style type="text/css">
+		.table-fixed tbody {
+    height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+    display: block;
+}
+
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+    float: left;
+    position: relative;
+
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+	</style>
 </html>

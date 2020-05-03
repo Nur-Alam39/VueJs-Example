@@ -1,52 +1,58 @@
 // Electric BILL Calculator
 new Vue({
-	el: '#app1',
-	data: {
-			watt: 0,
-			hour: 0,
-			rate: 0,
-			day: 0,
-			image1: 'assets/images/vue_logo.png',
-			image2: 'assets/images/bootstrap4.jpg'
-		  },
-		computed: {
-			result() {
-			    	return (parseFloat(this.watt) * parseFloat(this.hour) * parseFloat(this.rate) * parseFloat(this.day)) / 1000;
-			    }
-			  }
-			});
+el: '#app1',
+data: {
+		watt: 0,
+		hour: 0,
+		rate: 0,
+		day: 0,
+		image1: 'assets/images/vue_logo.png',
+		image2: 'assets/images/bootstrap4.jpg'
+	  },
+	computed: {
+		result() {
+		    	return (parseFloat(this.watt) * parseFloat(this.hour) * parseFloat(this.rate) * parseFloat(this.day)) / 1000;
+		    }
+		  }
+		});
 
 //BMI Calculator
-			new Vue({
-			  el: '#app2',
-			  data: {
-			    age: 0,
-			    Height: 0,
-			    weight: 0,
-			    gender: 0,
-			  },
-			  computed: {
-			  	result() {
-			    	return (parseFloat(this.age) * parseFloat(this.height));
-			    }
-			  }
-			});
+new Vue({
+  el: '#app2',
+  data: {
+    age: 0,
+    Height: 0,
+    weight: 0,
+    gender: 0,
+  },
+  computed: {
+  	result() {
+    	return (parseFloat(this.age) * parseFloat(this.height));
+    }
+  }
+});
 
 //VAT Calculator
-			new Vue({
-			  el: '#app3',
-			  data: {
-			    watt: 0,
-			    hour: 0,
-			    rate: 0,
-			    day: 0
-			  },
-			  computed: {
-			  	result() {
-			    	return (parseFloat(this.watt) * parseFloat(this.hour) * parseFloat(this.rate) * parseFloat(this.day)) / 1000;
-			    }
-			  }
-			});
+new Vue({
+    el: '#app3', //Attach to element id app
+    data: {
+        covid_19_all_news: [],
+     //Blank country array
+    },
+
+    mounted() { //When element is mounted, look up data
+        axios
+            .get('https://newsapi.org/v2/everything?q=COVID&from=2020-03-16&sortBy=publishedAt&apiKey=e9ee4fa558844943a04a65ad36d019e9&pageSize=100&page=2')
+            .then(response => 
+            {
+                this.covid_19_all_news = response.data
+            })
+            .catch(error =>(
+                console.log(error)
+                ));
+    }
+
+});
 
 ///Codeforces Contest API
 const app = new Vue({
@@ -135,7 +141,7 @@ new Vue({
 
     mounted() { //When element is mounted, look up data
         axios
-            .get('https://corona.lmao.ninja/countries')
+            .get('https://corona.lmao.ninja/v2/countries?sort=cases')
             .then(response => 
 			{
                 this.covid_19_all_countries = response.data
@@ -155,7 +161,7 @@ new Vue({
 
     mounted() { //When element is mounted, look up data
         axios
-            .get('https://corona.lmao.ninja/all')
+            .get('https://corona.lmao.ninja/v2/all')
             .then(response => 
 			{
                 this.covid_19_total = response.data
@@ -175,7 +181,7 @@ new Vue({
 
     mounted() { //When element is mounted, look up data
         axios
-            .get('https://corona.lmao.ninja/countries/bangladesh')
+            .get('https://corona.lmao.ninja/v2/countries/bangladesh')
             .then(response => 
 			{
                 this.covid_19_bangladesh = response.data
@@ -186,4 +192,26 @@ new Vue({
     }
 
 });
+
+new Vue({
+    el: '#app12', //Attach to element id app
+    data: {
+        covid_19_yesterday: [] //Blank country array
+    },
+
+    mounted() { //When element is mounted, look up data
+        axios
+            .get('https://corona.lmao.ninja/v2/countries?yesterday=true&sort=cases')
+            .then(response => 
+            {
+                this.covid_19_yesterday = response.data
+            })
+            .catch(error =>(
+                console.log(error)
+                ));
+    }
+
+});
+
+
 
