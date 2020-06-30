@@ -201,7 +201,7 @@ new Vue({
 
     mounted() { //When element is mounted, look up data
         axios
-            .get('https://corona.lmao.ninja/v2/countries?yesterday=true&sort=cases')
+            .get('https://corona.lmao.ninja/v2/countries?sort=cases')
             .then(response => 
             {
                 this.covid_19_yesterday = response.data

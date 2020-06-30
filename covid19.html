@@ -3,6 +3,9 @@
 	<head>
 		<style type="text/css">
 			body {font-family: "Nunito", sans-serif;}
+			#country_card:hover {
+				box-shadow: 0 0 28px #cccccc;
+			}
 		</style>
 		<title>কোভিড-১৯ | পরিস্থিতি</title>
 		<link rel="icon" href="assets/images/corona.png" type="image/icon type">
@@ -29,12 +32,16 @@
 			<hr>
 			<div class="row m-0 p-2 text-center justify-content-center">
 				<small>
-					<label>API Source <a href='https://github.com/NovelCOVID/API' target="_blank" style="color: blue">(Github - NovelCOVID/API)</a></label> <i style="color:#b3b3b3">&#8226; </i> 
+					API Source <a href='https://github.com/NovelCOVID/API' target="_blank" style="color: blue">(Github - NovelCOVID/API)</a> <i style="color:#b3b3b3">&#8226; </i> 
 					Data Source <a href='https://www.worldometers.info/coronavirus/' target="_blank" style="color: blue">(Worldometer)</a> <i style="color:#b3b3b3">&#8226; </i> 
 					<a href='https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd' target="_blank" style="color: blue">WHO </a> <i style="color:#b3b3b3">&#8226; </i>
 					<a href='https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6' target="_blank" style="color: blue">JHU CSSE </a> <i style="color:#b3b3b3">&#8226; </i>
 					<label>Developed by <a href='https://github.com/Nur-Alam39/VueJs-Example' target="_blank" style="color: blue">Nur-E-Alam Jony</a></label>
 				</small>
+			</div>
+			<div class="row m-0 p-2">
+				<a href="https://disease.sh/v2/countries?sort=cases" target="_blank"><button class="btn btn-sm btn-primary">Raw Data</button></a>&nbsp;
+				<a href="file:///G:/VueJs-Example/covid19table.html"><button class="btn btn-sm btn-primary">Tabular Form</button></a>
 			</div>
 			<div class="row m-0">
 				<div class="col-md-6  p-4 mt-2">
@@ -105,10 +112,10 @@
 			</div>
 		</div>
 		<div class = "container-fluid m-0 p-0 justify-content-center" id = "app9">
-			<div class="row m-0 p-4">
-		        <div class="col-md-4 mt-3" v-for="country in covid_19_all_countries">
+			<div class="row m-0 p-4" style="background-color: rgb(250, 250, 250)">
+		        <div class="col-md-4 mt-4" v-for="country in covid_19_all_countries">
 		        <a style='color: black; text-decoration: none;' target="_blank" v-bind:href="'https://www.worldometers.info/coronavirus/country/'+ country.country +'/'">
-				  <div class="card" style="border: ; border-radius: 10px;">
+				  <div class="card" id="country_card" style="border: none; border-radius: 10px; box-shadow: 0 0 5px #cccccc">
 				    <div class="card-body ">
 				    	 <div class='row m-0 text-center justify-content-center'>
 				    	 	<div class="col-md-2">
