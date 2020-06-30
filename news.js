@@ -16,9 +16,9 @@ Vue.component('news-list', {
     <section>
       <div class="row" v-for="posts in processedPosts">
         <div class="col-lg-3" v-for="post in posts" style = "">
-          <div class="card" style = "text-align:left; border-style: none; box-shadow: ">
-            <div class="card-img-top">
-              <a :href="post.url" target="_blank"><img :src="post.image_url" style="width:100%;height:auto;"></a>
+          <div class="card mt-2" style = "text-align:left; border-style: 1px solid #cccccc; border-radius: 10px; box-shadow: ">
+            <div class="card-img-top p-2">
+              <a :href="post.url" target="_blank"><img :src="post.image_url" style="width:100%;height:auto;  border-radius: 10px;"></a>
             </div>
             <div class="card-body">
               <h5 class="card-title">{{ post.title }}</h5>

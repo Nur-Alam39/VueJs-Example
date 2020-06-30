@@ -23,13 +23,11 @@
 		  		VueJS Examples
 		  	</a>
 		    <a class="nav-item nav-link active" style="color: black" id="nav-electric-tab" data-toggle="tab" href="#nav-electric" role="tab" aria-controls="nav-home" aria-selected="true">Electric Bill</a>
-		    <a class="nav-item nav-link" style="color: black" id="nav-covid_19-tab" data-toggle="tab" href="#nav-covid_19" role="tab" aria-controls="nav-profile" aria-selected="false">Corona Virus Update</a>
-		    <a class="nav-item nav-link"  style="color: black" id="nav-vat-tab" data-toggle="tab" href="#nav-vat" role="tab" aria-controls="nav-contact" aria-selected="false">VAT</a>
-		    <a class="nav-item nav-link"  style="color: black" id="nav-contest-tab" data-toggle="tab" href="#nav-contest" role="tab" aria-controls="nav-contest" aria-selected="false">CF Contest API</a>
-		    <a class="nav-item nav-link"  style="color: black" id="nav-contest-tab" data-toggle="tab" href="#nav-country" role="tab" aria-controls="nav-country" aria-selected="false">Country API</a>
-		    <a class="nav-item nav-link"  style="color: black" id="nav-news-tab" data-toggle="tab" href="#nav-news" role="tab" aria-controls="nav-news" aria-selected="false">News API</a>
-		    <a class="nav-item nav-link"  style="color: black" id="nav-test-tab" data-toggle="tab" href="#nav-test" role="tab" aria-controls="nav-test" aria-selected="false">Test Tab</a>
-		    <a class="nav-item nav-link"  style="color: black" id="nav-test2-tab" data-toggle="tab" href="#nav-test2" role="tab" aria-controls="nav-test2" aria-selected="false">All Contest List API</a>
+		    <a class="nav-item nav-link"  style="color: black" id="nav-contest-tab" data-toggle="tab" href="#nav-contest" role="tab" aria-controls="nav-contest" aria-selected="false">CodeForces Contest Schedule API</a>
+		    <a class="nav-item nav-link"  style="color: black" id="nav-contest-tab" data-toggle="tab" href="#nav-country" role="tab" aria-controls="nav-country" aria-selected="false">All Country Info API</a>
+		    <a class="nav-item nav-link"  style="color: black" id="nav-news-tab" data-toggle="tab" href="#nav-news" role="tab" aria-controls="nav-news" aria-selected="false">New York Times News API</a>
+		    <a class="nav-item nav-link"  style="color: black" id="nav-test2-tab" data-toggle="tab" href="#nav-test2" role="tab" aria-controls="nav-test2" aria-selected="false">All Contest Schedule API</a>
+		    <a class="nav-item nav-link"  style="color: black"  href="https://bsmrstucsecf.000webhostapp.com/vuejs%20example/covid19.html" target="_blank">Covid-19 Info API</a>
 		  </div>
 		</nav>
 
@@ -37,40 +35,47 @@
 
 		<!--Various caculator-->
 		  <div class="tab-pane fade show active" id="nav-electric" role="tabpanel" aria-labelledby="nav-electric-tab">
-			<div class = "card" id = "app1">
-				<h4 style = 'text-align: center'>Electric Bill Calculator</h4>
-				<hr>
-				<div class="form-group row">
-				    <label class="col-sm-6 col-form-label">Power (in watt):</label>
-				    <div class="col-sm-6">
-				      <input type="number" class="form-control" name="watt" v-model="watt">
-				    </div>
-				  </div>
-				 <div class="form-group row">
-				    <label class="col-sm-6 col-form-label">Daily Usages (in hour):</label>
-				    <div class="col-sm-6">
-				      <input type="number" class="form-control" name="hour" v-model="hour">
-				    </div>
-				  </div>
-				  <div class="form-group row">
-				    <label class="col-sm-6 col-form-label">Unit Rate (in taka):</label>
-				    <div class="col-sm-6">
-				      <input type="number" class="form-control" name="rate" v-model="rate">
-				    </div>
-				  </div>
-				  <div class="form-group row">
-				    <label class="col-sm-6 col-form-label">Usages in month (in day):</label>
-				    <div class="col-sm-6">
-				      <input type="number" class="form-control" name="day" v-model="day">
-				    </div>
-				  </div>
-				<hr>
-				<div class="form-group row" >
-				    <label class="col-sm-6 col-form-label">Bill Per Month:</label>
-				    <div class="col-sm-6">
-				     <p style="text-align: left" class="form-control">{{ result }} BDT</p>
-				    </div>
-				  </div>
+		  	<div class="row m-0">
+		  		<div class="co-lg-4 p-4">
+		  			Developed by <a href='https://github.com/Nur-Alam39/VueJs-Example' target="_blank" style="color: blue">Nur-E-Alam Jony</a>
+		  		</div>
+		  		<div class="col-lg-8">
+		  			<div class = "card" id = "app1" style="border-radius: 10px;">
+						<h4 style = 'text-align: center'>Electric Bill Calculator</h4>
+						<hr>
+						<div class="form-group row">
+						    <label class="col-sm-6 col-form-label">Power (in watt):</label>
+						    <div class="col-sm-6">
+						      <input type="number" class="form-control" name="watt" v-model="watt">
+						    </div>
+						  </div>
+						 <div class="form-group row">
+						    <label class="col-sm-6 col-form-label">Daily Usages (in hour):</label>
+						    <div class="col-sm-6">
+						      <input type="number" class="form-control" name="hour" v-model="hour">
+						    </div>
+						  </div>
+						  <div class="form-group row">
+						    <label class="col-sm-6 col-form-label">Unit Rate (in taka):</label>
+						    <div class="col-sm-6">
+						      <input type="number" class="form-control" name="rate" v-model="rate">
+						    </div>
+						  </div>
+						  <div class="form-group row">
+						    <label class="col-sm-6 col-form-label">Usages in month (in day):</label>
+						    <div class="col-sm-6">
+						      <input type="number" class="form-control" name="day" v-model="day">
+						    </div>
+						  </div>
+						<hr>
+						<div class="form-group row" >
+						    <label class="col-sm-6 col-form-label">Bill Per Month:</label>
+						    <div class="col-sm-6">
+						     <p style="text-align: left" class="form-control">{{ result }} BDT</p>
+						    </div>
+						  </div> 
+					</div>
+		  		</div>
 			</div>
 		  </div>
 		  <div class="tab-pane fade" id="nav-covid_19" role="tabpanel" aria-labelledby="nav-covid_19-tab">
